@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cours | SPC BOOM</title>
+    <link rel="icon" href="brand-logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="courses-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Accueil SPC BOOM">
+        <span class="brand-mark"><img src="brand-logo.png" alt="" /></span>
+        <span class="brand-copy">SPC BOOM<small>PHYSIQUE-CHIMIE</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir la navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+      <nav class="navigation" id="primary-navigation" aria-label="Navigation principale">
+        <a class="nav-link is-current" href="courses.html">Cours</a>
+        <a class="nav-link" href="exercises.html">Exercices</a>
+        <a class="nav-link" href="history.html">Histoire</a>
+        <a class="nav-link" href="index.html#private-courses">Cours particuliers</a>
+        <a class="nav-link" href="index.html#about">À propos</a>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero" aria-labelledby="courses-title">
+        <span class="section-kicker">PROGRAMME DE PHYSIQUE-CHIMIE</span>
+        <h1 id="courses-title">Choisir un cours</h1>
+        <p>Sélectionnez votre niveau, puis retrouvez les notions essentielles du collège et du lycée.</p>
+      </section>
+      <section class="lessons-section" id="lessons" aria-label="Liste des cours">
+        <div class="lesson-controls">
+          <div class="grade-filters" role="group" aria-label="Filtrer les cours par niveau">
+            <button class="filter-chip is-active" type="button" data-grade="all" aria-pressed="true">Tous les niveaux</button>
+            <button class="filter-chip" type="button" data-grade="3e" aria-pressed="false">3e</button>
+            <button class="filter-chip" type="button" data-grade="2nde" aria-pressed="false">Seconde</button>
+            <button class="filter-chip" type="button" data-grade="1ere" aria-pressed="false">Première</button>
+            <button class="filter-chip" type="button" data-grade="terminale" aria-pressed="false">Terminale</button>
+          </div>
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.3 4.3"></path></svg>
+            <input id="lesson-search" type="search" placeholder="Rechercher un cours" aria-label="Rechercher un cours" />
+            <kbd>/</kbd>
+          </label>
+        </div>
+        <div class="subject-filters" role="group" aria-label="Filtrer les cours par matière">
+          <button class="subject-filter is-active" type="button" data-subject="all" aria-pressed="true">Toutes les matières</button>
+          <button class="subject-filter" type="button" data-subject="Physique" aria-pressed="false"><span class="mini-dot physics-dot"></span> Physique</button>
+          <button class="subject-filter" type="button" data-subject="Chimie" aria-pressed="false"><span class="mini-dot chemistry-dot"></span> Chimie</button>
+        </div>
+        <div class="lesson-grid" id="lesson-grid">
+          <article class="lesson-card" data-grade="3e" data-subject="Physique" data-title="Mouvement et vitesse"><button class="lesson-open" type="button"><span class="lesson-art art-motion"><span class="art-index">01</span><span class="motion-road"></span><span class="motion-object">●</span><span class="art-formula">distance<br /><b>vitesse = ─────</b><br />temps</span></span><span class="lesson-info"><span class="lesson-meta"><span class="lesson-subject">PHYSIQUE</span><span>3e</span></span><span class="lesson-title">Mouvement &amp; vitesse</span><span class="lesson-bottom"><span>Les bases du mouvement</span><span class="lesson-arrow">↗</span></span></span></button></article>
+          <article class="lesson-card" data-grade="3e" data-subject="Chimie" data-title="Atomes et éléments chimiques"><button class="lesson-open" type="button"><span class="lesson-art art-atoms"><span class="art-index">02</span><span class="atom-core"></span><span class="atom-ring ring-a"></span><span class="atom-ring ring-b"></span><span class="atom-ring ring-c"></span></span><span class="lesson-info"><span class="lesson-meta"><span class="lesson-subject chemistry-text">CHIMIE</span><span>3e</span></span><span class="lesson-title">Atomes &amp; éléments</span><span class="lesson-bottom"><span>Les constituants de la matière</span><span class="lesson-arrow">↗</span></span></span></button></article>
+          <article class="lesson-card" data-grade="2nde" data-subject="Physique" data-title="Les forces et les lois de Newton"><button class="lesson-open" type="button"><span class="lesson-art art-forces"><span class="art-index">03</span><span class="force-block">m</span><span class="force-arrow">→</span><span class="force-label">F = ma</span></span><span class="lesson-info"><span class="lesson-meta"><span class="lesson-subject">PHYSIQUE</span><span>SECONDE</span></span><span class="lesson-title">Les forces &amp; Newton</span><span class="lesson-bottom"><span>Comprendre les interactions</span><span class="lesson-arrow">↗</span></span></span></button></article>
+          <article class="lesson-card" data-grade="2nde" data-subject="Chimie" data-title="Structure électronique et liaisons"><button class="lesson-open" type="button"><span class="lesson-art art-bonds"><span class="art-index">04</span><span class="bond-atom atom-left">Na<span>+</span></span><span class="bond-atom atom-right">Cl<span>−</span></span></span><span class="lesson-info"><span class="lesson-meta"><span class="lesson-subject chemistry-text">CHIMIE</span><span>SECONDE</span></span><span class="lesson-title">Liaisons chimiques</span><span class="lesson-bottom"><span>Pourquoi les atomes s’associent</span><span class="lesson-arrow">↗</span></span></span></button></article>
+          <article class="lesson-card" data-grade="1ere" data-subject="Physique" data-title="Circuits électriques et énergie"><button class="lesson-open" type="button"><span class="lesson-art art-circuits"><span class="art-index">05</span><span class="circuit-path"></span><span class="circuit-battery">+</span><span class="circuit-bulb">✦</span></span><span class="lesson-info"><span class="lesson-meta"><span class="lesson-subject">PHYSIQUE</span><span>PREMIÈRE</span></span><span class="lesson-title">Circuits électriques</span><span class="lesson-bottom"><span>Suivre le courant</span><span class="lesson-arrow">↗</span></span></span></button></article>
+          <article class="lesson-card" data-grade="1ere" data-subject="Chimie" data-title="Acides, bases et pH"><button class="lesson-open" type="button"><span class="lesson-art art-ph"><span class="art-index">06</span><span class="ph-scale"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="ph-number">pH 7</span></span><span class="lesson-info"><span class="lesson-meta"><span class="lesson-subject chemistry-text">CHIMIE</span><span>PREMIÈRE</span></span><span class="lesson-title">Acides, bases &amp; pH</span><span class="lesson-bottom"><span>Maîtriser l’échelle de pH</span><span class="lesson-arrow">↗</span></span></span></button></article>
+          <article class="lesson-card" data-grade="terminale" data-subject="Physique" data-title="Ondes, fréquence et spectres"><button class="lesson-open" type="button"><span class="lesson-art art-waves"><span class="art-index">07</span><span class="wave-line"></span><span class="wave-formula">λ × f = v</span></span><span class="lesson-info"><span class="lesson-meta"><span class="lesson-subject">PHYSIQUE</span><span>TERMINALE</span></span><span class="lesson-title">Ondes &amp; fréquences</span><span class="lesson-bottom"><span>Analyser les ondes</span><span class="lesson-arrow">↗</span></span></span></button></article>
+          <article class="lesson-card" data-grade="terminale" data-subject="Chimie" data-title="Chimie organique et synthèse"><button class="lesson-open" type="button"><span class="lesson-art art-organic"><span class="art-index">08</span><span class="organic-formula">CH₃—CH₂—OH</span></span><span class="lesson-info"><span class="lesson-meta"><span class="lesson-subject chemistry-text">CHIMIE</span><span>TERMINALE</span></span><span class="lesson-title">Chimie organique</span><span class="lesson-bottom"><span>Étudier les molécules de carbone</span><span class="lesson-arrow">↗</span></span></span></button></article>
+        </div>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>Aucun cours trouvé</h3><p>Modifiez votre recherche ou choisissez un autre niveau.</p><button class="reset-filters" type="button">Réinitialiser les filtres</button></div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="brand footer-brand" href="index.html" aria-label="Accueil SPC BOOM"><span class="brand-mark"><img src="brand-logo.png" alt="" /></span><span class="brand-copy">SPC BOOM<small>PHYSIQUE-CHIMIE</small></span></a><span class="footer-note">Cours de physique-chimie — 3e à Terminale.</span><a class="footer-top" href="#">RETOUR EN HAUT ↑</a></footer>
+    <dialog class="lesson-dialog" aria-labelledby="dialog-title"><form method="dialog"><button class="dialog-close" aria-label="Fermer">×</button></form><div class="dialog-symbol" aria-hidden="true">▶</div><span class="section-kicker" id="dialog-meta">COURS</span><h2 id="dialog-title">Titre du cours</h2><p class="dialog-message">Le cours vidéo sera bientôt disponible.</p><p class="dialog-hint">Le contenu est intégré dans cette bibliothèque de cours.</p><button class="button button-primary dialog-done" type="button">Retour aux cours</button></dialog><div class="dialog-backdrop"></div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices | SPC BOOM</title>
+    <link rel="icon" href="brand-logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="exercises-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Accueil SPC BOOM"><span class="brand-mark"><img src="brand-logo.png" alt="" /></span><span class="brand-copy">SPC BOOM<small>PHYSIQUE-CHIMIE</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir la navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+      <nav class="navigation" id="primary-navigation" aria-label="Navigation principale">
+        <a class="nav-link" href="courses.html">Cours</a>
+        <a class="nav-link is-current" href="exercises.html">Exercices</a>
+        <a class="nav-link" href="history.html">Histoire</a>
+        <a class="nav-link" href="index.html#private-courses">Cours particuliers</a>
+        <a class="nav-link" href="index.html#about">À propos</a>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero" aria-labelledby="exercises-title">
+        <span class="section-kicker">COMPRENDRE PAR LA PRATIQUE</span>
+        <h1 id="exercises-title">S’entraîner avec des exercices</h1>
+        <p>Des questions progressives pour consolider le cours, développer la rédaction et se préparer aux évaluations.</p>
+      </section>
+      <section class="exercises-section" aria-label="Niveaux d’exercices">
+        <div class="exercise-grid">
+          <article class="exercise-card"><span class="exercise-number">01</span><span class="exercise-level">NIVEAU COLLÈGE</span><h3>QCM &amp; applications</h3><p>Réviser les définitions, retrouver les unités et appliquer les formules essentielles.</p><button class="exercise-open" type="button" data-exercise="Exercices de niveau collège">Découvrir les exercices <span aria-hidden="true">→</span></button></article>
+          <article class="exercise-card"><span class="exercise-number">02</span><span class="exercise-level">LYCÉE — SECONDE</span><h3>Exercices guidés</h3><p>Identifier les données, construire un raisonnement et présenter une réponse complète.</p><button class="exercise-open" type="button" data-exercise="Exercices pour la Seconde">Découvrir les exercices <span aria-hidden="true">→</span></button></article>
+          <article class="exercise-card featured"><span class="exercise-number">03</span><span class="exercise-level">PREMIÈRE &amp; TERMINALE</span><h3>Sujets &amp; bac</h3><p>S’entraîner sur des problèmes structurés avec méthodes, calculs et argumentation scientifique.</p><button class="exercise-open" type="button" data-exercise="Exercices Première et Terminale">Découvrir les sujets <span aria-hidden="true">→</span></button></article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="brand footer-brand" href="index.html" aria-label="Accueil SPC BOOM"><span class="brand-mark"><img src="brand-logo.png" alt="" /></span><span class="brand-copy">SPC BOOM<small>PHYSIQUE-CHIMIE</small></span></a><span class="footer-note">Cours de physique-chimie — 3e à Terminale.</span><a class="footer-top" href="#">RETOUR EN HAUT ↑</a></footer>
+    <dialog class="lesson-dialog" aria-labelledby="dialog-title"><form method="dialog"><button class="dialog-close" aria-label="Fermer">×</button></form><div class="dialog-symbol" aria-hidden="true">✓</div><span class="section-kicker" id="dialog-meta">BANQUE D’EXERCICES</span><h2 id="dialog-title">Exercices</h2><p class="dialog-message">Les exercices seront bientôt disponibles.</p><p class="dialog-hint">Chaque série pourra inclure le corrigé détaillé.</p><button class="button button-primary dialog-done" type="button">Fermer</button></dialog><div class="dialog-backdrop"></div>
+  </body>
+</html>

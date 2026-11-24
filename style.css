@@ -1,0 +1,410 @@
+:root {
+  color-scheme: light;
+  --paper: #f8f7f2;
+  --ink: #202c29;
+  --muted: #737b73;
+  --green: #245c4b;
+  --green-dark: #194939;
+  --lime: #d7ed74;
+  --orange: #e68757;
+  --line: #e8e7df;
+  --serif: Georgia, "Times New Roman", serif;
+  font-family: "DM Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+body { margin: 0; background: var(--paper); color: var(--ink); }
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #e68757; outline-offset: 4px; }
+::selection { color: var(--green-dark); background: var(--lime); }
+
+.site-header { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; max-width: 1440px; height: 92px; margin: auto; padding: 0 8.3%; }
+.brand { display: inline-flex; align-items: center; gap: 11px; }
+.brand-mark { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; }
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.brand-copy { display: grid; gap: 2px; font: 800 16px "Manrope", sans-serif; letter-spacing: -.5px; }
+.brand-copy small { color: #788078; font: 700 8px "DM Sans", sans-serif; letter-spacing: 1.15px; }
+.navigation { display: flex; align-items: center; gap: 38px; }
+.navigation .is-current { color: var(--green); }
+.page-hero { max-width: 1440px; margin: 0 auto; padding: 82px 8.3% 68px; background: #f0efe8; }
+.page-hero h1 { margin: 14px 0 12px; font: 700 52px/1.05 "Manrope", sans-serif; letter-spacing: -3px; }
+.page-hero p { max-width: 650px; margin: 0; color: #747b72; font-size: 14px; line-height: 1.75; }
+.nav-link { color: #545d55; font-size: 13px; font-weight: 600; transition: color .18s ease; }
+.nav-link:hover, .footer-top:hover { color: var(--green); }
+.nav-cta { display: inline-flex; align-items: center; gap: 18px; padding: 13px 18px; border: 1px solid #dcded5; border-radius: 5px; font-size: 12px; font-weight: 700; }
+.nav-cta span { color: var(--green); font-size: 17px; }
+.menu-toggle { display: none; }
+
+.hero { position: relative; overflow: hidden; max-width: 1440px; min-height: 570px; margin: 0 auto; padding: 91px 8.3% 70px; }
+.hero::before { position: absolute; z-index: -1; top: 0; right: 0; width: 47%; height: 100%; background: #f0efe7; content: ""; }
+.hero-copy { position: relative; z-index: 1; width: min(490px, 52%); }
+.eyebrow, .section-kicker { color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1.7px; }
+.eyebrow { display: flex; align-items: center; gap: 9px; }
+.eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+h1, h2, p { margin-top: 0; }
+.hero h1 { margin: 27px 0 17px; font: 600 clamp(56px, 6.1vw, 82px)/.99 "Manrope", sans-serif; letter-spacing: -5.8px; }
+.highlight { position: relative; z-index: 0; display: inline-block; font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -5px; }
+.highlight::after { position: absolute; z-index: -1; right: -5px; bottom: 5px; left: 0; height: 14px; background: var(--lime); content: ""; transform: rotate(-2deg); }
+.hero-description { max-width: 395px; color: #677168; font-size: 15px; line-height: 1.8; }
+.hero-actions { display: flex; align-items: center; gap: 25px; margin-top: 27px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-height: 49px; padding: 0 19px; border: 0; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 700; }
+.button-primary { background: var(--green); color: #fff; transition: background .2s, transform .2s; }
+.button-primary:hover { background: var(--green-dark); transform: translateY(-2px); }
+.button-primary span { color: var(--lime); font-size: 18px; }
+.text-link { color: var(--green); font-size: 12px; font-weight: 700; }
+.text-link span { padding-left: 5px; font-size: 17px; }
+.hero-note { display: flex; align-items: center; gap: 9px; margin-top: 46px; color: #737a71; font-size: 11px; }
+.note-icon { color: var(--orange); font-size: 16px; }
+.hero-note i { display: inline-block; width: 3px; height: 3px; margin: 0 8px 3px; border-radius: 50%; background: #a7aaa0; }
+
+.hero-art { position: absolute; top: 30px; right: 8%; width: 41%; height: 485px; }
+.art-orbit { position: absolute; top: 42px; left: 12%; width: 76%; height: 76%; border: 1px solid rgba(36, 92, 75, .16); border-radius: 50%; transform: rotate(-32deg); }
+.orbit-two { top: 30px; left: 19%; width: 61%; height: 84%; border-color: rgba(36, 92, 75, .12); transform: rotate(42deg); }
+.art-sun { position: absolute; top: 99px; left: 28%; display: grid; width: 208px; height: 208px; place-content: center; border-radius: 50%; background: #dfea9e; color: var(--green); }
+.art-sun::before { position: absolute; top: 15px; left: 15px; width: 176px; height: 176px; border: 1px solid rgba(36, 92, 75, .2); border-radius: 50%; content: ""; }
+.art-sun span { font: italic 88px var(--serif); transform: rotate(-10deg); }
+.float-card { position: absolute; z-index: 1; display: flex; flex-direction: column; justify-content: center; background: #fffefa; box-shadow: 0 13px 35px rgba(47, 57, 48, .1); }
+.formula-card { top: 64px; right: 1%; width: 147px; height: 97px; padding: 16px 19px; transform: rotate(5deg); }
+.float-label { color: #7d8277; font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+.formula { margin-top: 8px; color: var(--green); font: 600 30px "Manrope", sans-serif; letter-spacing: -2px; }
+.formula span { color: var(--orange); font-family: var(--serif); font-style: italic; }
+.molecule-card { top: 307px; left: 5%; width: 126px; height: 101px; align-items: center; background: #fffefa; transform: rotate(-7deg); }
+.molecule-label { position: absolute; top: 13px; left: 14px; color: var(--green); font: 700 12px "Manrope", sans-serif; }
+.molecule { position: relative; display: flex; align-items: center; margin-top: 18px; }
+.molecule::before, .molecule::after { position: absolute; top: 18px; left: 17px; width: 40px; height: 2px; background: #abb991; content: ""; transform: rotate(28deg); }
+.molecule::after { left: 47px; transform: rotate(-28deg); }
+.molecule i { z-index: 1; width: 31px; height: 31px; border: 2px solid #fff; border-radius: 50%; background: var(--green); }
+.molecule i:first-child, .molecule i:last-child { width: 18px; height: 18px; background: var(--orange); }
+.note-card { right: 0; bottom: 52px; width: 157px; height: 78px; flex-direction: row; align-items: center; gap: 12px; padding: 12px; background: var(--green); color: #fff; font: 500 11px/1.5 "Manrope", sans-serif; transform: rotate(3deg); }
+.note-star { color: var(--lime); font-size: 27px; }
+.art-spark { position: absolute; color: var(--orange); }
+.spark-one { top: 239px; left: 12%; font-size: 24px; }
+.spark-two { top: 73px; left: 20%; color: var(--green); font-size: 19px; }
+.art-label { position: absolute; right: 4%; bottom: 7px; color: #687267; font-size: 8px; font-weight: 700; letter-spacing: 1.6px; }
+.hero-bottom { position: absolute; right: 8.3%; bottom: 25px; left: 8.3%; display: flex; align-items: center; gap: 15px; color: #858980; font-size: 8px; font-weight: 700; letter-spacing: 1.3px; }
+.bottom-line { flex: 1; height: 1px; background: #dedfd6; }
+.hero-bottom > span:last-child span { padding-left: 4px; color: var(--green); font-size: 12px; }
+
+.subjects-section { display: grid; grid-template-columns: .83fr 1fr 1fr; gap: 17px; max-width: 1440px; margin: 0 auto; padding: 88px 8.3% 92px; }
+.subject-intro { padding-top: 19px; }
+.subject-intro .section-kicker { font-size: 9px; }
+.subject-intro h2, .lessons-heading h2, .about-copy h2 { margin: 16px 0 0; font: 700 31px/1.2 "Manrope", sans-serif; letter-spacing: -1.5px; }
+.subject-card { position: relative; display: flex; min-height: 196px; overflow: hidden; padding: 22px; border-radius: 3px; }
+.physics-card { background: #eaf0e5; }
+.chemistry-card { background: #f1e8df; }
+.subject-icon { display: grid; width: 35px; height: 35px; flex: 0 0 auto; place-items: center; border-radius: 50%; color: white; font-size: 17px; }
+.physics-icon { background: var(--green); }
+.chemistry-icon { background: var(--orange); }
+.subject-content { display: flex; flex-direction: column; margin: 42px 0 0 -35px; }
+.subject-number { color: #6f7a6c; font-size: 8px; font-weight: 700; letter-spacing: 1.3px; }
+.subject-title { margin-top: 8px; font: 600 17px/1.35 "Manrope", sans-serif; letter-spacing: -.5px; }
+.subject-arrow { margin-top: 13px; color: var(--green); font-size: 19px; }
+.physics-decoration { position: absolute; right: -2px; bottom: 5px; color: rgba(36, 92, 75, .12); font: italic 58px var(--serif); transform: rotate(-16deg); }
+.chemistry-decoration { position: absolute; right: 22px; bottom: 25px; display: flex; align-items: center; }
+.chemistry-decoration i { width: 17px; height: 17px; margin-left: -3px; border: 3px solid #f1e8df; border-radius: 50%; background: rgba(230, 135, 87, .65); }
+.chemistry-decoration i:first-child { width: 12px; height: 12px; background: rgba(36, 92, 75, .6); }
+.chemistry-decoration i:last-child { width: 22px; height: 22px; background: rgba(229, 178, 98, .8); }
+
+.lessons-section { max-width: 1440px; margin: 0 auto; padding: 77px 8.3% 104px; background: #f0efe8; }
+.lessons-heading { display: flex; align-items: flex-end; justify-content: space-between; }
+.lessons-heading h2 { margin-top: 12px; font-size: 39px; letter-spacing: -2px; }
+.section-description { margin: 9px 0 0; color: #747b72; font-size: 13px; }
+.lesson-count { padding-bottom: 5px; color: #777e74; font-size: 11px; }
+.lesson-count strong { color: var(--green); font-size: 15px; }
+.lesson-controls { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 34px; }
+.grade-filters { display: flex; flex-wrap: wrap; gap: 7px; }
+.filter-chip { min-height: 34px; padding: 0 14px; border: 1px solid #dfded5; border-radius: 3px; background: transparent; color: #626b61; cursor: pointer; font-size: 10px; font-weight: 600; transition: background .16s, color .16s, border .16s; }
+.filter-chip:hover { border-color: var(--green); }
+.filter-chip.is-active { border-color: var(--green); background: var(--green); color: white; }
+.search-box { display: flex; width: 190px; height: 36px; align-items: center; gap: 8px; padding: 0 10px; border: 1px solid #dfded5; border-radius: 3px; background: #f8f7f2; }
+.search-box svg { width: 14px; flex: 0 0 auto; fill: none; stroke: #777e74; stroke-linecap: round; stroke-width: 1.7; }
+.search-box input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 10px; }
+.search-box input::placeholder { color: #92958b; }
+.search-box kbd { display: grid; width: 18px; height: 19px; flex: 0 0 auto; place-items: center; border: 1px solid #e5e3db; border-radius: 3px; color: #97988e; font: 10px "DM Sans", sans-serif; }
+.subject-filters { display: flex; gap: 22px; margin: 23px 0 19px; }
+.subject-filter { display: inline-flex; align-items: center; gap: 7px; padding: 0; border: 0; background: none; color: #777e74; cursor: pointer; font-size: 10px; font-weight: 600; }
+.subject-filter:hover, .subject-filter.is-active { color: var(--ink); }
+.mini-dot { width: 7px; height: 7px; border-radius: 50%; background: #aeb1a6; }
+.physics-dot { background: var(--green); }
+.chemistry-dot { background: var(--orange); }
+.lesson-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; }
+.lesson-card { min-width: 0; background: #fffefa; box-shadow: 0 3px 12px rgba(42, 48, 40, .035); transition: transform .18s, box-shadow .18s; }
+.lesson-card:hover { box-shadow: 0 9px 24px rgba(42, 48, 40, .1); transform: translateY(-3px); }
+.lesson-card[hidden] { display: none; }
+.lesson-open { display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; cursor: pointer; text-align: left; }
+.lesson-art { position: relative; display: block; height: 159px; overflow: hidden; }
+.art-index { position: absolute; z-index: 1; top: 12px; left: 13px; color: rgba(32, 44, 41, .5); font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+.play-button { position: absolute; z-index: 2; right: 12px; bottom: 12px; display: grid; width: 29px; height: 29px; place-items: center; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; background: rgba(255,255,255,.83); color: var(--green); font-size: 9px; transition: transform .18s; }
+.lesson-open:hover .play-button { transform: scale(1.12); }
+.lesson-info { display: flex; min-height: 109px; flex-direction: column; padding: 13px 14px 12px; }
+.lesson-meta { display: flex; justify-content: space-between; color: #888d82; font-size: 8px; font-weight: 700; letter-spacing: .85px; }
+.lesson-subject { color: var(--green); }
+.chemistry-text { color: #c5764d; }
+.lesson-title { overflow: hidden; margin-top: 8px; font: 700 13px "Manrope", sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.lesson-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; color: #83877e; font-size: 9px; }
+.lesson-arrow { color: var(--green); font-size: 15px; }
+.art-motion { background: #e3eadd; }
+.motion-road { position: absolute; right: -8%; bottom: 34px; left: -8%; height: 2px; background: #9baa8f; transform: rotate(-14deg); }
+.motion-road::after { position: absolute; right: 11%; top: -4px; width: 42px; height: 8px; border-top: 1px dashed #7b8d73; content: ""; }
+.motion-object { position: absolute; top: 62px; left: 43%; display: grid; width: 39px; height: 39px; place-items: center; border-radius: 50%; background: var(--green); color: var(--lime); font-size: 13px; box-shadow: 9px 8px 0 rgba(36,92,75,.12); }
+.art-formula { position: absolute; top: 30px; left: 17px; color: #556551; font: 10px/1.4 var(--serif); transform: rotate(-8deg); }
+.art-formula b { font-size: 11px; }
+.art-atoms { background: #f3e7dd; }
+.atom-core { position: absolute; top: 61px; left: calc(50% - 13px); z-index: 1; width: 26px; height: 26px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 8px rgba(230,135,87,.13); }
+.atom-ring { position: absolute; top: 38px; left: calc(50% - 37px); width: 74px; height: 74px; border: 1px solid rgba(155,99,68,.65); border-radius: 50%; }
+.ring-b { transform: rotate(60deg) scaleX(.56); }
+.ring-c { transform: rotate(-60deg) scaleX(.56); }
+.art-caption { position: absolute; right: 14px; bottom: 14px; color: #936c54; font-size: 7px; line-height: 1.55; letter-spacing: .8px; text-align: right; }
+.art-caption b { color: #714d39; }
+.art-forces { background: #ecebdc; }
+.force-block { position: absolute; top: 54px; left: 31%; display: grid; width: 53px; height: 53px; place-items: center; background: var(--green); color: white; font: italic 20px var(--serif); transform: rotate(-5deg); }
+.force-arrow { position: absolute; top: 45px; left: 60%; color: #dd8352; font-size: 43px; }
+.force-label { position: absolute; right: 16%; bottom: 27px; color: #63725a; font: italic 18px var(--serif); }
+.force-spark { position: absolute; top: 36px; right: 24%; color: #e28b5b; }
+.art-bonds { background: #e9eee7; }
+.bond-atom { position: absolute; top: 50px; display: grid; width: 56px; height: 56px; place-items: center; border: 1px solid rgba(36,92,75,.36); border-radius: 50%; color: var(--green); font: 600 19px "Manrope", sans-serif; }
+.bond-atom span { position: absolute; top: 8px; right: 8px; font: 10px "DM Sans", sans-serif; }
+.atom-left { left: 22%; background: #f2f4ea; }
+.atom-right { right: 22%; background: #d8e6d5; }
+.bond-dots { position: absolute; top: 68px; left: calc(50% - 14px); color: var(--orange); font-size: 11px; letter-spacing: 2px; }
+.art-bonds .art-caption { right: auto; bottom: 13px; left: 17px; color: #697866; text-align: left; }
+.art-bonds .art-caption b { color: var(--green); }
+.art-circuits { background: #dfece7; }
+.circuit-path { position: absolute; top: 39px; left: calc(50% - 40px); width: 104px; height: 71px; border: 2px solid #658777; border-right-color: transparent; border-radius: 6px; }
+.circuit-battery { position: absolute; top: 65px; left: calc(50% - 54px); display: grid; width: 28px; height: 22px; place-items: center; background: #f1f2df; color: var(--green); font: 700 14px "Manrope", sans-serif; }
+.circuit-bulb { position: absolute; top: 60px; left: calc(50% + 45px); display: grid; width: 29px; height: 29px; place-items: center; border: 1px solid #deae58; border-radius: 50%; background: #f7e5a5; color: #cd8e30; font-size: 16px; box-shadow: 0 0 18px #efcf7e; }
+.circuit-label { position: absolute; right: 15px; bottom: 14px; color: #5b7b68; font-size: 8px; line-height: 1.5; letter-spacing: 1px; }
+.art-ph { background: #f1e6e2; }
+.ph-scale { position: absolute; top: 61px; left: 16%; display: flex; gap: 3px; }
+.ph-scale i { width: 21px; height: 24px; background: #d07d74; }
+.ph-scale i:nth-child(2) { background: #db9383; }
+.ph-scale i:nth-child(3) { background: #e2b49a; }
+.ph-scale i:nth-child(4) { background: #e5d3a6; }
+.ph-scale i:nth-child(5) { background: #c8d19b; }
+.ph-scale i:nth-child(6) { background: #9db991; }
+.ph-scale i:nth-child(7) { background: #70977a; }
+.ph-range { position: absolute; top: 91px; right: 16%; left: 16%; display: flex; justify-content: space-between; color: #7d736c; font-size: 6px; font-weight: 700; letter-spacing: .5px; }
+.ph-number { position: absolute; top: 29px; left: 45%; color: #bd7066; font: italic 24px var(--serif); transform: rotate(-7deg); }
+.art-waves { background: #e4e9f0; }
+.wave-line { position: absolute; top: 44px; left: -8%; width: 116%; height: 75px; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 90' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 45 C18 45 18 10 38 10 S58 80 78 80 S98 10 118 10 S138 80 158 80 S178 10 198 10 S218 80 238 80 S258 45 278 45 H300' fill='none' stroke='%23536d93' stroke-width='2'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
+.wave-formula { position: absolute; top: 117px; left: 20%; color: #526a8e; font: italic 15px var(--serif); }
+.wave-formula span { color: var(--orange); }
+.wave-caption { position: absolute; top: 18px; right: 14px; color: #71819a; font-size: 7px; line-height: 1.5; letter-spacing: .8px; text-align: right; }
+.art-organic { background: #ece5ef; }
+.organic-formula { position: absolute; top: 26px; left: 19%; color: #725d82; font: italic 20px var(--serif); }
+.organic-structure { position: absolute; top: 67px; left: 28%; display: grid; grid-template-columns: repeat(3, 25px); gap: 6px; }
+.organic-structure i { width: 25px; height: 25px; border: 1px solid #887798; border-radius: 50%; background: rgba(255,255,255,.4); }
+.organic-structure i:nth-child(2), .organic-structure i:nth-child(4) { background: #dacfe1; }
+.organic-structure i:last-child { background: #e9a47e; }
+.organic-caption { position: absolute; right: 15px; bottom: 13px; color: #8c778f; font-size: 7px; line-height: 1.5; letter-spacing: .9px; text-align: right; }
+.organic-caption b { color: #6e587d; }
+.empty-state { padding: 45px 10px; color: #747b72; text-align: center; }
+.empty-state[hidden] { display: none; }
+.empty-state > span { color: var(--green); font-size: 34px; }
+.empty-state h3 { margin: 9px 0; color: var(--ink); font: 700 20px "Manrope", sans-serif; }
+.empty-state p { font-size: 12px; }
+.reset-filters { padding: 9px 14px; border: 1px solid #d8ddd1; border-radius: 3px; background: transparent; color: var(--green); cursor: pointer; font-size: 11px; font-weight: 700; }
+
+.history-section { max-width: 1440px; margin: 0 auto; padding: 82px 13% 96px; background: #fffefa; }
+.history-intro { max-width: 710px; margin-bottom: 36px; }
+.history-intro h2 { margin: 13px 0 12px; font: 700 34px/1.16 "Manrope", sans-serif; letter-spacing: -1.7px; }
+.history-intro p { margin: 0; color: #747b72; font-size: 13px; line-height: 1.8; }
+.history-timeline { position: relative; display: grid; grid-template-columns: 1fr; margin-top: 0; }
+.history-timeline::before { position: absolute; top: 9px; bottom: 24px; left: 4px; width: 1px; background: #dfe2d9; content: ""; }
+.history-item, .history-item:not(:first-child) { min-height: 0; padding: 0 0 34px 32px; border: 0; }
+.history-item:last-child { padding-bottom: 4px; }
+.history-item::before, .history-item:not(:first-child)::before { top: 5px; left: 0; width: 9px; height: 9px; border: 2px solid #fffefa; background: var(--orange); box-shadow: 0 0 0 1px #dfe1d7; }
+.history-era { color: var(--green); font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+.history-item h3 { margin: 8px 0 8px; font: 700 20px "Manrope", sans-serif; letter-spacing: -.7px; }
+.history-item p { max-width: 760px; margin: 0; color: #747b72; font-size: 12px; line-height: 1.85; }
+.history-note { margin: 28px 0 0 32px; padding: 22px 25px; border-left: 3px solid var(--orange); background: #f5f4ed; }
+.history-note p { max-width: 720px; margin: 8px 0 0; color: #59635a; font-size: 12px; line-height: 1.75; }
+
+.exercises-section { max-width: 1440px; margin: 0 auto; padding: 82px 8.3% 92px; background: #eef1e9; }
+.courses-page .page-hero, .exercises-page .page-hero { padding-bottom: 32px; }
+.courses-page .lessons-section, .exercises-page .exercises-section { padding-top: 30px; }
+.exercises-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+.exercises-heading h2 { margin-bottom: 0; }
+.exercises-heading > p { max-width: 390px; margin: 0 0 3px; color: #747b72; font-size: 12px; line-height: 1.7; }
+.exercise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 34px; }
+.exercise-card { display: flex; min-height: 270px; flex-direction: column; padding: 24px; border: 1px solid #dde1d6; border-radius: 3px; background: #fffefa; }
+.exercise-card.featured { background: var(--green); color: white; }
+.exercise-number { color: #92988d; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+.exercise-card.featured .exercise-number { color: var(--lime); }
+.exercise-level { margin-top: 28px; color: var(--green); font-size: 8px; font-weight: 700; letter-spacing: 1.2px; }
+.exercise-card.featured .exercise-level { color: var(--lime); }
+.exercise-card h3 { margin: 10px 0 9px; font: 700 20px "Manrope", sans-serif; letter-spacing: -.7px; }
+.exercise-card p { margin: 0; color: #747b72; font-size: 12px; line-height: 1.7; }
+.exercise-card.featured p { color: #dfe8df; }
+.exercise-open { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding: 15px 0 0; border: 0; border-top: 1px solid #e4e5de; background: transparent; color: var(--green); cursor: pointer; font-size: 11px; font-weight: 700; text-align: left; }
+.exercise-open span { font-size: 16px; }
+.exercise-card.featured .exercise-open { border-top-color: rgba(255,255,255,.18); color: var(--lime); }
+
+.private-section { display: grid; grid-template-columns: 1.45fr .75fr; gap: 70px; align-items: center; max-width: 1440px; margin: 0 auto; padding: 82px 13%; background: #f6f3ea; }
+.private-content h2 { font-size: 39px; }
+.private-content h2 span { color: var(--orange); font: italic 400 41px var(--serif); }
+.private-content > p { max-width: 590px; color: #747b72; font-size: 13px; line-height: 1.75; }
+.private-benefits { display: grid; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; color: #59635a; font-size: 12px; }
+.private-benefits li { display: flex; align-items: center; gap: 9px; }
+.private-benefits li span { display: grid; width: 20px; height: 20px; place-items: center; border-radius: 50%; background: #dde8c5; color: var(--green); font-size: 10px; font-weight: 800; }
+.private-card { padding: 27px; border-top: 4px solid var(--orange); background: #fffefa; box-shadow: 0 14px 35px rgba(54,62,51,.08); }
+.private-label { color: #858c80; font-size: 8px; font-weight: 700; letter-spacing: 1.2px; }
+.private-card h3 { margin: 14px 0 8px; font: 700 21px "Manrope", sans-serif; letter-spacing: -.7px; }
+.private-card p { margin: 0 0 20px; color: #747b72; font-size: 12px; }
+.private-card .button { width: 100%; }
+
+.about-section { position: relative; display: flex; min-height: 360px; align-items: center; gap: 70px; overflow: hidden; max-width: 1440px; margin: 0 auto; padding: 76px 13%; background: #244e41; color: white; }
+.about-mark { position: relative; display: grid; width: 180px; height: 180px; flex: 0 0 auto; place-items: center; border: 1px solid rgba(222,239,181,.24); border-radius: 50%; }
+.about-mark::before, .about-mark::after { position: absolute; width: 143px; height: 143px; border: 1px solid rgba(222,239,181,.23); border-radius: 50%; content: ""; }
+.about-mark::after { width: 105px; height: 105px; }
+.about-mark > span { z-index: 1; color: var(--lime); font: 800 62px "Manrope", sans-serif; letter-spacing: -7px; }
+.about-mark > i { position: absolute; z-index: 2; top: 18px; right: 17px; color: #e89566; font-size: 24px; font-style: normal; }
+.about-copy { position: relative; z-index: 1; max-width: 425px; }
+.about-copy .section-kicker { color: var(--lime); }
+.about-copy h2 { margin-top: 15px; font-size: 34px; }
+.about-copy h2 span { color: var(--lime); font: italic 400 36px var(--serif); }
+.about-copy p { margin: 13px 0 16px; color: #d4dfd5; font-size: 12px; line-height: 1.8; }
+.about-link { color: var(--lime); }
+.about-doodle { position: absolute; right: 5%; bottom: -61px; color: rgba(255,255,255,.055); font: 240px var(--serif); transform: rotate(-12deg); }
+.site-footer { display: flex; min-height: 105px; align-items: center; justify-content: space-between; max-width: 1440px; margin: auto; padding: 20px 8.3%; }
+.footer-brand .brand-mark { width: 42px; height: 42px; }
+.footer-brand .brand-copy { font-size: 14px; }
+.footer-brand .brand-copy small { font-size: 7px; }
+.footer-note { color: #858980; font-size: 10px; }
+.footer-top { color: #72796f; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+.footer-top span { margin-left: 5px; color: var(--green); font-size: 14px; }
+
+.lesson-dialog { position: fixed; top: 50%; left: 50%; z-index: 6; width: min(420px, calc(100% - 34px)); padding: 39px 38px 35px; border: 1px solid #e7e5dc; border-radius: 5px; background: var(--paper); box-shadow: 0 20px 80px rgba(18,34,27,.2); color: var(--ink); text-align: center; opacity: 0; transform: translate(-50%, -46%); transition: opacity .2s, transform .2s; }
+.lesson-dialog[open] { opacity: 1; transform: translate(-50%, -50%); }
+.lesson-dialog::backdrop { background: transparent; }
+.dialog-backdrop { position: fixed; z-index: 5; inset: 0; display: none; background: rgba(23,39,32,.48); backdrop-filter: blur(2px); }
+.dialog-backdrop.is-visible { display: block; }
+.lesson-dialog form { position: absolute; top: 13px; right: 14px; }
+.dialog-close { width: 29px; height: 29px; border: 1px solid #e1dfd5; border-radius: 50%; background: transparent; color: #737b73; cursor: pointer; font-size: 20px; line-height: 1; }
+.dialog-symbol { display: grid; width: 48px; height: 48px; margin: 0 auto 20px; place-items: center; border-radius: 50%; background: var(--green); color: var(--lime); font-size: 14px; }
+.lesson-dialog .section-kicker { font-size: 9px; }
+.lesson-dialog h2 { margin: 10px 0; font: 700 25px "Manrope", sans-serif; letter-spacing: -1px; }
+.dialog-message { margin-bottom: 6px; color: #606a61; font-size: 13px; line-height: 1.6; }
+.dialog-hint { color: #909188; font-size: 10px; line-height: 1.6; }
+.dialog-done { margin-top: 12px; }
+body.dialog-open { overflow: hidden; }
+
+@media (min-width: 1441px) {
+  .hero::before { right: calc((100% - 1440px) / 2); width: calc(47% + (100% - 1440px) / 2); }
+}
+@media (max-width: 1050px) {
+  .site-header { padding-right: 5%; padding-left: 5%; }
+  .navigation { gap: 20px; }
+  .hero { padding-right: 5%; padding-left: 5%; }
+  .hero-art { right: 4%; width: 45%; }
+  .hero-bottom { right: 5%; left: 5%; }
+  .subjects-section, .lessons-section { padding-right: 5%; padding-left: 5%; }
+  .lesson-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .about-section { padding-right: 8%; padding-left: 8%; }
+  .history-section, .exercises-section { padding-right: 5%; padding-left: 5%; }
+  .private-section { gap: 35px; padding-right: 8%; padding-left: 8%; }
+  .site-footer { padding-right: 5%; padding-left: 5%; }
+}
+@media (max-width: 760px) {
+  html { scroll-padding-top: 72px; }
+  .page-hero { padding: 58px 6% 52px; }
+  .page-hero h1 { font-size: 38px; letter-spacing: -2px; }
+  .site-header { height: 72px; padding: 0 6%; }
+  .brand-mark { width: 44px; height: 44px; }
+  .menu-toggle { display: flex; width: 39px; height: 39px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid #dfe0d7; border-radius: 4px; background: transparent; cursor: pointer; }
+  .menu-toggle span { width: 16px; height: 1.5px; background: var(--green); transition: transform .2s; }
+  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.25px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
+  .navigation { position: absolute; top: 62px; right: 5%; left: 5%; display: none; align-items: stretch; gap: 0; padding: 10px 17px 15px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 25px rgba(32,44,41,.08); }
+  .navigation.is-open { display: flex; flex-direction: column; }
+  .nav-link { padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .nav-cta { justify-content: space-between; margin-top: 12px; }
+  .hero { min-height: 0; padding: 63px 7% 395px; }
+  .hero::before { top: auto; bottom: 0; width: 100%; height: 390px; }
+  .hero-copy { width: 100%; }
+  .hero h1 { margin-top: 22px; font-size: clamp(59px, 12vw, 77px); }
+  .hero-description { max-width: 430px; font-size: 14px; }
+  .hero-note { margin-top: 27px; }
+  .hero-art { top: auto; right: 9%; bottom: 12px; width: 82%; height: 365px; }
+  .art-sun { top: 78px; left: 29%; width: 168px; height: 168px; }
+  .art-sun::before { width: 140px; height: 140px; }
+  .art-sun span { font-size: 72px; }
+  .formula-card { top: 37px; right: 1%; transform: scale(.88) rotate(5deg); }
+  .molecule-card { top: 242px; left: 2%; transform: scale(.88) rotate(-7deg); }
+  .note-card { right: 0; bottom: 29px; transform: scale(.9) rotate(3deg); }
+  .art-label { bottom: 2px; }
+  .hero-bottom { bottom: 9px; }
+  .subjects-section { grid-template-columns: 1fr 1fr; gap: 12px; padding: 65px 6%; }
+  .subject-intro { grid-column: 1/-1; padding: 0 0 6px; }
+  .subject-intro h2 br { display: none; }
+  .subject-card { min-height: 185px; padding: 17px; }
+  .subject-content { margin-top: 44px; margin-left: -35px; }
+  .subject-title { font-size: 15px; }
+  .lessons-section { padding: 66px 6% 75px; }
+  .lessons-heading { align-items: flex-start; }
+  .lessons-heading h2 { font-size: 34px; }
+  .lesson-count { margin-top: 5px; white-space: nowrap; }
+  .lesson-controls { align-items: stretch; flex-direction: column; gap: 14px; margin-top: 25px; }
+  .grade-filters { gap: 6px; }
+  .filter-chip { padding: 0 11px; }
+  .search-box { width: 100%; }
+  .lesson-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .lesson-art { height: 145px; }
+  .lesson-info { padding-right: 10px; padding-left: 10px; }
+  .lesson-title { font-size: 12px; }
+  .history-section, .exercises-section { padding: 65px 6%; }
+  .history-intro h2, .exercises-heading h2, .private-content h2 { font-size: 30px; }
+  .history-timeline { grid-template-columns: 1fr; }
+  .history-item, .history-item:not(:first-child) { min-height: 0; padding: 0 0 28px 28px; border: 0; }
+  .history-item:last-child { padding-bottom: 0; }
+  .history-item::before, .history-item:not(:first-child)::before { left: 0; }
+  .history-note { margin-left: 28px; padding: 18px; }
+  .exercises-heading { align-items: flex-start; flex-direction: column; }
+  .exercise-grid { grid-template-columns: 1fr; }
+  .exercise-card { min-height: 230px; }
+  .private-section { grid-template-columns: 1fr; gap: 30px; padding: 58px 8%; }
+  .private-content h2 span { font-size: 33px; }
+  .about-section { min-height: 0; flex-direction: column; align-items: flex-start; gap: 33px; padding: 58px 8%; }
+  .about-mark { width: 130px; height: 130px; }
+  .about-mark::before { width: 105px; height: 105px; }
+  .about-mark::after { width: 78px; height: 78px; }
+  .about-mark > span { font-size: 47px; }
+  .about-mark > i { top: 12px; right: 11px; font-size: 19px; }
+  .about-copy h2 { font-size: 30px; }
+  .about-copy h2 span { font-size: 32px; }
+  .site-footer { min-height: 120px; flex-wrap: wrap; gap: 14px; padding: 22px 6%; }
+  .footer-note { order: 3; width: 100%; }
+}
+@media (max-width: 420px) {
+  .hero { padding-bottom: 354px; }
+  .hero::before { height: 350px; }
+  .hero h1 { letter-spacing: -4px; }
+  .hero-actions { gap: 15px; }
+  .button { gap: 12px; padding: 0 13px; font-size: 11px; }
+  .text-link { font-size: 10px; }
+  .hero-art { right: 5%; width: 92%; height: 331px; }
+  .art-sun { top: 69px; left: 26%; width: 154px; height: 154px; }
+  .art-sun::before { width: 128px; height: 128px; }
+  .molecule-card { top: 215px; }
+  .note-card { bottom: 23px; }
+  .hero-bottom { font-size: 7px; letter-spacing: .7px; }
+  .subjects-section { grid-template-columns: 1fr; }
+  .subject-intro { grid-column: auto; }
+  .subject-card { min-height: 164px; }
+  .lessons-heading { flex-direction: column; gap: 10px; }
+  .lesson-count { margin: 0; }
+  .lesson-grid { gap: 9px; }
+  .lesson-art { height: 124px; }
+  .lesson-info { min-height: 104px; padding: 11px 8px; }
+  .lesson-meta { font-size: 7px; }
+  .lesson-title { font-size: 11px; }
+  .lesson-bottom { font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
